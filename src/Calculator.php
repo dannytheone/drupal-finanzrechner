@@ -50,6 +50,55 @@ final class Calculator {
   ];
 
   /**
+   * German calculator names for the placeholder on German calculators.
+   */
+  private const NAMES_DE = [
+    'sparplanrechner' => 'ETF-Sparplanrechner',
+    'zinseszinsrechner' => 'Zinseszinsrechner',
+    'kapitalertragsteuer-rechner' => 'Kapitalertragsteuer-Rechner',
+    'vorabpauschale-rechner' => 'Vorabpauschale-Rechner',
+    'freistellungsauftrag-rechner' => 'Freistellungsauftrag-Rechner',
+    'dividenden-rechner' => 'Dividenden-Rechner',
+    'etf-kosten-rechner' => 'ETF-Kostenrechner',
+    'entnahmerechner' => 'Entnahmerechner',
+    'finanzielle-freiheit-rechner' => 'Finanzielle-Freiheit-Rechner',
+    'rentenluecke-rechner' => 'Rentenlücke-Rechner',
+    'altersvorsorgedepot' => 'Altersvorsorgedepot-Rechner',
+    'fruehstart-rente-rechner' => 'Frühstart-Rente-Rechner',
+    'inflationsrechner' => 'Inflationsrechner',
+    'einmalanlage-oder-sparplan' => 'Einmalanlage oder Sparplan?',
+    'tilgen-oder-investieren' => 'Tilgen oder investieren?',
+    'rebalancing-rechner' => 'ETF-Rebalancing-Rechner',
+    'musterportfolios' => 'Musterportfolios',
+    'xirr-rechner' => 'XIRR-Rechner',
+    'ttwror-rechner' => 'TTWROR-Rechner',
+  ];
+
+  /**
+   * Placeholder texts in the calculator's language.
+   *
+   * The calculators exist only in German and English, so the placeholder
+   * follows the calculator language instead of waiting for interface
+   * translations.
+   */
+  private const TEXTS = [
+    'de' => [
+      'intro' => 'Interaktiver Rechner: eigene Zahlen eingeben und das Ergebnis sofort sehen.',
+      'button' => 'Rechner laden',
+      'note' => 'Beim Laden wird eine Verbindung zu planafolio.com hergestellt.',
+      'privacy' => 'Datenschutzerklärung',
+      'credit' => 'Rechner bereitgestellt von',
+    ],
+    'en' => [
+      'intro' => 'Interactive calculator. Enter your own numbers and see the result instantly.',
+      'button' => 'Load calculator',
+      'note' => 'Loading connects to planafolio.com.',
+      'privacy' => 'Privacy policy',
+      'credit' => 'Calculator provided by',
+    ],
+  ];
+
+  /**
    * Calculator names for select lists, keyed by slug.
    *
    * @return \Drupal\Core\StringTranslation\TranslatableMarkup[]
@@ -104,7 +153,9 @@ final class Calculator {
     $query = ['v' => 1, 'theme' => $theme, 'lang' => $lang, 'utm_medium' => 'drupal'];
     $calculator = [
       'slug' => $slug,
-      'name' => self::options()[$slug],
+      'name' => $lang === 'de' ? self::NAMES_DE[$slug] : (string) self::options()[$slug],
+      'texts' => self::TEXTS[$lang],
+      'lang' => $lang,
       'src' => self::SERVICE_ORIGIN . '/embed/' . $slug . '?' . http_build_query($query),
       'href' => self::SERVICE_ORIGIN . self::TOOLS[$slug][$lang] . '?' . http_build_query([
         'utm_source' => 'embed',
