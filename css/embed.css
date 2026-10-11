@@ -1,0 +1,27 @@
+.pft-embed { margin: 1.5em 0; }
+.pft-consent {
+	display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .7em;
+	padding: 2em 1.5em; border-radius: 16px; text-align: center; box-sizing: border-box;
+	font-family: inherit; line-height: 1.45;
+}
+.pft-theme-light .pft-consent { background: linear-gradient(160deg, #f6f3ff 0%, #ffffff 70%); border: 1px solid #e4dcff; color: #1a1830; }
+.pft-theme-dark .pft-consent { background: linear-gradient(160deg, #1f1a3d 0%, #121320 70%); border: 1px solid #2e2856; color: #ecebf5; }
+.pft-consent-icon { width: 52px; height: 52px; }
+.pft-consent-title { margin: 0; font-weight: 700; font-size: 1.2em; }
+.pft-consent-text { margin: 0; max-width: 32em; font-size: .95em; opacity: .85; }
+.pft-consent-button {
+	cursor: pointer; margin-top: .3em; padding: .75em 1.6em; border: 0; border-radius: 999px;
+	background: linear-gradient(135deg, #7c5cfc 0%, #6a48f0 100%); color: #fff;
+	font: inherit; font-weight: 600; box-shadow: 0 6px 18px rgba(106, 72, 240, .28);
+	transition: transform .15s ease, box-shadow .15s ease;
+}
+.pft-consent-button:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(106, 72, 240, .36); }
+.pft-consent-button:focus-visible { outline: 3px solid #b9a8ff; outline-offset: 2px; }
+.pft-consent-note { margin: 0; font-size: .78em; opacity: .7; }
+.pft-consent-note a { color: inherit; }
+.pft-credit { margin: .5em 0 0; font-size: 12px; opacity: .8; }
+@media (prefers-reduced-motion: reduce) { .pft-consent-button { transition: none; } }
+/* Theme-Absatzstile (z. B. Olivero, Cassiopeia) nicht in den Platzhalter durchschlagen lassen. */
+.pft-embed .pft-consent p { margin: 0; }
+.pft-embed .pft-credit { margin: .5em 0 0; }
+.pft-embed iframe { display: block; max-width: 100%; }

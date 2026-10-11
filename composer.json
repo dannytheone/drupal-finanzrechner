@@ -1,0 +1,11 @@
+{
+    "name": "drupal/planafolio_finanzrechner",
+    "type": "drupal-module",
+    "description": "Free German finance calculators from Planafolio as a block and text filter, with two-click privacy mode.",
+    "keywords": ["Drupal", "calculator", "finance", "rechner", "etf", "zinseszins"],
+    "homepage": "https://planafolio.com/rechner-einbetten",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "drupal/core": "^10.3 || ^11"
+    }
+}

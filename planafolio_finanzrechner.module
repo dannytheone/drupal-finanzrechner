@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Planafolio Finanzrechner: theme hook for one embedded calculator.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Implements hook_theme().
+ */
+function planafolio_finanzrechner_theme(): array {
+  return [
+    'planafolio_calculator' => [
+      'variables' => ['calculator' => NULL],
+    ],
+  ];
+}

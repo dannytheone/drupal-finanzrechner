@@ -1,0 +1,36 @@
+block.settings.planafolio_calculator:
+  type: block_settings
+  label: 'Planafolio calculator block'
+  mapping:
+    tool:
+      type: string
+      label: 'Calculator'
+    theme:
+      type: string
+      label: 'Theme'
+    lang:
+      type: string
+      label: 'Language'
+    height:
+      type: integer
+      label: 'Initial height'
+    consent:
+      type: boolean
+      label: 'Two-click privacy mode'
+    credit:
+      type: boolean
+      label: 'Show source link'
+
+filter_settings.planafolio_calculator:
+  type: mapping
+  label: 'Planafolio calculators filter'
+  mapping:
+    theme:
+      type: string
+      label: 'Default theme'
+    consent:
+      type: boolean
+      label: 'Two-click privacy mode'
+    credit:
+      type: boolean
+      label: 'Show source link'

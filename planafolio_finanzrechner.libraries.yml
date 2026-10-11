@@ -1,0 +1,7 @@
+embed:
+  version: 1.0.0
+  css:
+    component:
+      css/embed.css: {}
+  js:
+    js/embed.js: { attributes: { defer: true } }

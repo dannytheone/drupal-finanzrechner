@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * One Planafolio calculator, either behind the two-click placeholder or as
+ * an iframe right away.
+ *
+ * Available variables:
+ * - calculator: slug, name, src, href, theme, height, placeholder_height,
+ *   consent, credit, privacy_url.
+ */
+#}
+<div class="pft-embed pft-theme-{{ calculator.theme }}">
+  {% if calculator.consent %}
+    <div class="pft-consent" style="min-height:{{ calculator.placeholder_height }}px">
+      <svg class="pft-consent-icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="16" fill="#7c5cfc"/><rect x="16" y="12" width="32" height="40" rx="6" fill="#fff"/><path d="M21 28l6-5 5 3 8-8" stroke="#6a48f0" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><g fill="#c4b5fd"><circle cx="24" cy="38" r="2.6"/><circle cx="32" cy="38" r="2.6"/><circle cx="40" cy="38" r="2.6"/><circle cx="24" cy="46" r="2.6"/><circle cx="32" cy="46" r="2.6"/></g><circle cx="40" cy="46" r="2.6" fill="#6a48f0"/></svg>
+      <p class="pft-consent-title">{{ calculator.name }}</p>
+      <p class="pft-consent-text">{{ 'Interactive calculator. Enter your own numbers and see the result instantly.'|t }}</p>
+      <button type="button" class="pft-consent-button" data-pft-src="{{ calculator.src }}" data-pft-title="{{ calculator.name }}" data-pft-height="{{ calculator.height }}">{{ 'Load calculator'|t }}</button>
+      <p class="pft-consent-note">{{ 'Loading connects to planafolio.com.'|t }} <a href="{{ calculator.privacy_url }}" target="_blank" rel="noopener nofollow">{{ 'Privacy policy'|t }}</a></p>
+    </div>
+  {% else %}
+    <iframe data-planafolio-embed src="{{ calculator.src }}" title="{{ calculator.name }}" loading="lazy" style="width:100%;border:0;height:{{ calculator.height }}px"></iframe>
+  {% endif %}
+  {% if calculator.credit %}
+    <p class="pft-credit">{{ 'Calculator provided by'|t }} <a href="{{ calculator.href }}">Planafolio</a></p>
+  {% endif %}
+</div>

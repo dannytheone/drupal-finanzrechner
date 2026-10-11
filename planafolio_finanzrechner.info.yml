@@ -1,0 +1,6 @@
+name: Planafolio Finanzrechner
+type: module
+description: '19 free German finance calculators (ETF savings plan, compound interest, capital gains tax, Vorabpauschale, pension gap and more) as a block and as [planafolio …] in text, with two-click privacy mode.'
+package: Content
+core_version_requirement: ^10.3 || ^11
+configure: entity.filter_format.collection
