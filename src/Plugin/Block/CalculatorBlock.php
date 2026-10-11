@@ -27,7 +27,7 @@ final class CalculatorBlock extends BlockBase implements ContainerFactoryPluginI
     array $configuration,
     $plugin_id,
     $plugin_definition,
-    private readonly LanguageManagerInterface $languageManager,
+    protected LanguageManagerInterface $languageManager,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
   }

@@ -40,7 +40,7 @@ final class CalculatorFilter extends FilterBase implements ContainerFactoryPlugi
     array $configuration,
     $plugin_id,
     $plugin_definition,
-    private readonly RendererInterface $renderer,
+    protected RendererInterface $renderer,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
   }
